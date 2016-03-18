@@ -1,0 +1,12 @@
+.warp {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+.warp--layer {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  mix-blend-mode: overlay;
+  background-size: 1080px 1920px;
+  background-repeat: repeat;
+  background-position: center 0;
+}
