@@ -8,10 +8,10 @@ var WarpLayer = React.createClass({
   },
   getInitialState: function() {
     return {
-      x: 0,
-      y: 0,
-      speedX: Helpers.randomFloat(1,10),
-      speedY: Helpers.randomFloat(1,2.5),
+      x: Helpers.randomFloat(-500, 500),
+      y: Helpers.randomFloat(-500, 500),
+      speedX: Helpers.randomFloat(-1,1),
+      speedY: Helpers.randomFloat(-2,2),
     };
   },
   componentDidMount: function() {
@@ -19,14 +19,14 @@ var WarpLayer = React.createClass({
   },
   moveBg: function(){
     this.setState({
-      // x: this.state.x + this.state.speedX,
+      x: this.state.x + this.state.speedX,
       y: this.state.y + this.state.speedY
     });
   },
   render: function() {
     var styles = {
       backgroundImage: 'url(/images/m-warp-' + this.props.color + '.jpg)',
-      backgroundPosition: 'center ' + this.state.y + 'px'
+      backgroundPosition: this.state.x + 'px ' + this.state.y + 'px'
     }
     return (
       <div 
